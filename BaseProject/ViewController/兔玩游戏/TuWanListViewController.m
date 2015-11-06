@@ -11,7 +11,7 @@
 #import "TuWanListCell.h"
 #import "TuWanImageCell.h"
 #import "iCarousel.h"
-
+#import "TuWanHtmlController.h"
 @interface TuWanListViewController ()<iCarouselDelegate,iCarouselDataSource>
 @property(nonatomic,strong)TuWanViewModel *tuWanVM;
 
@@ -154,6 +154,11 @@ kRemoveCellSeparator
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ([self.tuWanVM isHtmlInListForRow:indexPath.row]) {
+        TuWanHtmlController *vc = [[TuWanHtmlController alloc]initWithURL:[self.tuWanVM detailURLForRowInList:indexPath.row]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -189,6 +194,13 @@ kRemoveCellSeparator
         return YES;
     }
     return value;
+}
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    if ([self.tuWanVM isHtmlInListForRow:index]) {
+        TuWanHtmlController *vc = [[TuWanHtmlController alloc]initWithURL:[self.tuWanVM detailURLForRowInIndexPic:index]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 /**   监控滚动到当前第几个*/
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel

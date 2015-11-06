@@ -48,4 +48,14 @@
 //    头部图片
 //- (NSURL *)titleImgPathForRow:(NSInteger)row;
 
+
+/**  当前数据类型是视频*/
+- (BOOL)isVideoInListForRow:(NSInteger)row;
+- (BOOL)isVideoInIndexPicFowRow:(NSInteger)row;
+/**  当前数据类型是图片*/
+- (BOOL)isPicInListForRow:(NSInteger)row;
+- (BOOL)isPicInIndexPicForRow:(NSInteger)row;
+/** 当前数据类型是html*/
+- (BOOL)isHtmlInListForRow:(NSInteger)row;
+- (BOOL)isHtmlInIndexPicForRow:(NSInteger)row;
 @end

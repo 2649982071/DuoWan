@@ -34,6 +34,29 @@
     return self.picArr != nil && self.picArr.count != 0;
 }
 
+/**  当前数据类型是视频*/
+- (BOOL)isVideoInListForRow:(NSInteger)row{
+    return [[self dataForRow:row].type isEqualToString:@"viedo"];
+}
+- (BOOL)isVideoInIndexPicFowRow:(NSInteger)row{
+    return [[self indexPicForRow:row].type isEqualToString:@"viedo"];
+}
+/**  当前数据类型是图片*/
+- (BOOL)isPicInListForRow:(NSInteger)row{
+     return [[self dataForRow:row].type isEqualToString:@"pic"];
+}
+- (BOOL)isPicInIndexPicForRow:(NSInteger)row
+{
+    return [[self indexPicForRow:row].type isEqualToString:@"pic"];
+}
+/** 当前数据类型是html*/
+- (BOOL)isHtmlInListForRow:(NSInteger)row{
+    return [[self dataForRow:row].type isEqualToString:@"all"];
+}
+- (BOOL)isHtmlInIndexPicForRow:(NSInteger)row{
+    return [[self indexPicForRow:row].type isEqualToString:@"all"];
+}
+
 /**   判断某一行对应的数据是否有图 */
 /**  根据showType  0是没图， 1是有图 */
 - (BOOL)containImages:(NSInteger)row

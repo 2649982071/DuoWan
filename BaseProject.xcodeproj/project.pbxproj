@@ -70,6 +70,7 @@
 		97012F271BEC482400692C57 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97012F201BEC482400692C57 /* WMProgressView.m */; };
 		97012F281BEC482400692C57 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97012F231BEC482400692C57 /* WMPageController.m */; };
 		970D36AE1BEC7CCD000A14BE /* TRImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 970D36AD1BEC7CCD000A14BE /* TRImageView.m */; };
+		9728F8BF1BEC95C800AC2DDE /* TuWanHtmlController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9728F8BE1BEC95C800AC2DDE /* TuWanHtmlController.m */; };
 		97A23E551BEB357900C7CB04 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A23E281BEB357900C7CB04 /* BaseModel.m */; };
 		97A23E561BEB357900C7CB04 /* TuWanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A23E2B1BEB357900C7CB04 /* TuWanModel.m */; };
 		97A23E571BEB357900C7CB04 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A23E2E1BEB357900C7CB04 /* AlbumModel.m */; };
@@ -215,6 +216,8 @@
 		97012F231BEC482400692C57 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
 		970D36AC1BEC7CCD000A14BE /* TRImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRImageView.h; sourceTree = "<group>"; };
 		970D36AD1BEC7CCD000A14BE /* TRImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRImageView.m; sourceTree = "<group>"; };
+		9728F8BD1BEC95C800AC2DDE /* TuWanHtmlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanHtmlController.h; sourceTree = "<group>"; };
+		9728F8BE1BEC95C800AC2DDE /* TuWanHtmlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanHtmlController.m; sourceTree = "<group>"; };
 		97A23E271BEB357900C7CB04 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		97A23E281BEB357900C7CB04 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		97A23E2A1BEB357900C7CB04 /* TuWanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanModel.h; sourceTree = "<group>"; };
@@ -696,6 +699,8 @@
 				97DDAC411BEB09C800AE3193 /* TuWanViewController.m */,
 				97012E981BEC365100692C57 /* TuWanListViewController.h */,
 				97012E991BEC365100692C57 /* TuWanListViewController.m */,
+				9728F8BD1BEC95C800AC2DDE /* TuWanHtmlController.h */,
+				9728F8BE1BEC95C800AC2DDE /* TuWanHtmlController.m */,
 			);
 			path = "兔玩游戏";
 			sourceTree = "<group>";
@@ -984,6 +989,7 @@
 				970D36AE1BEC7CCD000A14BE /* TRImageView.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				97FD14791BEB28020054F669 /* DuoWanNetManager.m in Sources */,
+				9728F8BF1BEC95C800AC2DDE /* TuWanHtmlController.m in Sources */,
 				97A23E5F1BEB357900C7CB04 /* HeroDetailModel.m in Sources */,
 				97A23E611BEB357900C7CB04 /* HeroSkinModel.m in Sources */,
 				97FD146D1BEB27A40054F669 /* LeftViewController.m in Sources */,
