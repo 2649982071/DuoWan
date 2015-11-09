@@ -16,6 +16,7 @@
         _orderLabel = [UILabel new];
         _orderLabel.font = [UIFont boldFlatFontOfSize:17];
         _orderLabel.textColor = [UIColor lightGrayColor];
+        _orderLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_orderLabel];
     }
     return _orderLabel;
@@ -77,7 +78,7 @@
         [self.orderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.mas_equalTo(0);
             make.left.mas_equalTo(10);
-            make.width.mas_equalTo(20);
+            make.width.mas_equalTo(35);
         }];
         [self.iconIV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(65, 65));
@@ -108,7 +109,23 @@
             make.right.mas_equalTo(-10);
         }];
 //      分割线 左间距调整
-        self.separatorInset = UIEdgeInsetsMake(0, 50, 0, 0);
+        self.separatorInset = UIEdgeInsetsMake(0, 100, 0, 0);
+        
+        /**  使用KVO－键值观察 如果 text 被赋值为1 颜色是 */
+        /**  下方方法 如果text属性 被赋新值 则触发task*/
+        [_orderLabel bk_addObserverForKeyPath:@"text" options:NSKeyValueObservingOptionNew task:^(id obj, NSDictionary *change) {
+            NSString *value = change[@"new"];
+            if ([value isEqualToString:@"1"]) {
+                _orderLabel.textColor = [UIColor redColor];
+            }else if ([value isEqualToString:@"2"]){
+                _orderLabel.textColor = [UIColor blueColor];
+            }else if([value isEqualToString:@"3"]){
+                _orderLabel.textColor = [UIColor orangeColor];
+            }else{
+                _orderLabel.textColor = [UIColor lightGrayColor];
+            }
+            
+        }];
     }
     
 

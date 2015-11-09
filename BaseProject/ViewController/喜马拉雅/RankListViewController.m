@@ -67,6 +67,8 @@
             }else{
                 [self.tableView reloadData];
             }
+            /**  重置脚步 没有更多数据*/
+            [self.tableView.footer resetNoMoreData];
             [self.tableView.header endRefreshing];
         }];
     }];
@@ -75,10 +77,15 @@
     self.tableView.footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self.rankVM getMoreDataCompletionHandle:^(NSError *error) {
             if (error) {
-                [self showErrorMsg:error];
+                [self showErrorMsg:error.localizedDescription];
+                if (error.code == 999) {
+                    [self.tableView.footer endRefreshingWithNoMoreData];
+                }
             }else{
                 [self.tableView reloadData];
+                
             }
+           
             [self.tableView.footer endRefreshing];
         }];
     }];

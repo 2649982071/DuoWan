@@ -47,8 +47,10 @@
     
         self.sideMedu.backgroundImage = [UIImage imageNamed:@"10941686_0800"];
 //    可以让出现菜单时，不显示状态栏
-  //  self.window.rootViewController = self.sideMenu;
-    self.window.rootViewController = [RankListViewController defaultnavi];
+    self.window.rootViewController = self.sideMenu;
+    
+//    /** 测试代码 */
+//    self.window.rootViewController = [RankListViewController defaultnavi];
   
     // 配置全局UI样式
     [self configGlobalUIStyle];
