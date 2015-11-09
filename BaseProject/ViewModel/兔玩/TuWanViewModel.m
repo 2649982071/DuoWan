@@ -25,6 +25,16 @@
     }
     return self;
 }
+
+/**  返回某行数据的aid*/
+- (NSString *)aidInListForRow:(NSInteger)row{
+    return [self dataForRow:row].aid;
+}
+- (NSString *)aidInIndexPicForRow:(NSInteger)row{
+    return [self indexPicForRow:row].aid;
+}
+
+
 - (NSInteger)rowCount
 {
     return self.dataArr.count;
@@ -36,10 +46,10 @@
 
 /**  当前数据类型是视频*/
 - (BOOL)isVideoInListForRow:(NSInteger)row{
-    return [[self dataForRow:row].type isEqualToString:@"viedo"];
+    return [[self dataForRow:row].type isEqualToString:@"video"];
 }
 - (BOOL)isVideoInIndexPicFowRow:(NSInteger)row{
-    return [[self indexPicForRow:row].type isEqualToString:@"viedo"];
+    return [[self indexPicForRow:row].type isEqualToString:@"video"];
 }
 /**  当前数据类型是图片*/
 - (BOOL)isPicInListForRow:(NSInteger)row{

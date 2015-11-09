@@ -12,6 +12,9 @@
 #import "TuWanImageCell.h"
 #import "iCarousel.h"
 #import "TuWanHtmlController.h"
+#import "TuWanVideoController.h"
+#import "TuWanPicController.h"
+
 @interface TuWanListViewController ()<iCarouselDelegate,iCarouselDataSource>
 @property(nonatomic,strong)TuWanViewModel *tuWanVM;
 
@@ -114,7 +117,6 @@
             [self.tableView.footer endRefreshing];
         }];
     }];
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -139,7 +141,6 @@
          [cell.iconIV2.imageView setImageWithURL:[self.tuWanVM iconURLSForRowInList:indexPath.row][2] placeholderImage:[UIImage imageNamed:@"share_qq"]];
         return cell;
     }
-    
     // placeholderImage 当图片没有下载完成之前显示的文件
     [cell.imgView.imageView setImageWithURL:[self.tuWanVM imgPathForRow:indexPath.row] placeholderImage:[UIImage imageNamed:@"find_album_bg"]];
     cell.titleLabel.text = [self.tuWanVM titleForRow:indexPath.row];
@@ -157,6 +158,14 @@ kRemoveCellSeparator
     if ([self.tuWanVM isHtmlInListForRow:indexPath.row]) {
         TuWanHtmlController *vc = [[TuWanHtmlController alloc]initWithURL:[self.tuWanVM detailURLForRowInList:indexPath.row]];
         [self.navigationController pushViewController:vc animated:YES];
+    }
+    if ([self.tuWanVM isVideoInListForRow:indexPath.row]) {
+        TuWanVideoController *vc = [[TuWanVideoController alloc]initWithURL:[self.tuWanVM detailURLForRowInList:indexPath.row]];
+     //   [self.navigationController pushViewController:vc animated:YES];
+    }
+    if ([self.tuWanVM isPicInListForRow:indexPath.row]) {
+        TuWanPicController *pic = [[TuWanPicController alloc]initWithAid:[self.tuWanVM aidInListForRow:indexPath.row]];
+        [self.navigationController pushViewController:pic animated:YES];
     }
     
 }
@@ -197,10 +206,19 @@ kRemoveCellSeparator
 }
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
-    if ([self.tuWanVM isHtmlInListForRow:index]) {
+    if ([self.tuWanVM isHtmlInIndexPicForRow:index]) {
         TuWanHtmlController *vc = [[TuWanHtmlController alloc]initWithURL:[self.tuWanVM detailURLForRowInIndexPic:index]];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    if ([self.tuWanVM isPicInIndexPicForRow:index]) {
+        TuWanPicController *pic = [[TuWanPicController alloc]initWithAid:[self.tuWanVM aidInIndexPicForRow:index]];
+        [self.navigationController pushViewController:pic animated:YES];
+    }
+    if ([self.tuWanVM isVideoInIndexPicFowRow:index]) {
+        TuWanVideoController *vc = [[TuWanVideoController alloc]initWithURL:[self.tuWanVM detailURLForRowInIndexPic:index]];
+     //   [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 /**   监控滚动到当前第几个*/
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel

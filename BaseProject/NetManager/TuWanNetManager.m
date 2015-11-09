@@ -109,6 +109,21 @@
     }];
 }
 
+
+
++ (id)getTuWanVideoDetailWithID:(NSString *)aid completionHandle:(void (^)(id, NSError *))completionHandle{
+    return [self GET:[self percentPathWithPath:kTuWanDetailPath params:@{kAppId, @"aid": aid}] parameters:nil completionHandler:^(id responseObj, NSError *error) {
+        //这里一定要用firstObj方法来取，不能用[0]。 如果数组为空  第一种不会崩溃，值为nil。  第二种会数组越界
+        completionHandle([TuWanImageModel objectArrayWithKeyValuesArray:responseObj].firstObject, error);
+    }];
+}
+
++ (id)getPicDetailWithId:(NSString *)aid kCompletionHandle{
+    return [self GET:[self percentPathWithPath:kTuWanDetailPath params:@{kAppId, @"aid": aid}] parameters:nil completionHandler:^(id responseObj, NSError *error) {
+        //这里一定要用firstObj方法来取，不能用[0]。 如果数组为空  第一种不会崩溃，值为nil。  第二种会数组越界
+        completionHandle([TuWanImageModel objectArrayWithKeyValuesArray:responseObj].firstObject, error);
+    }];
+}
 @end
 
 

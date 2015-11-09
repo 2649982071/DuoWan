@@ -11,16 +11,13 @@
 #import "iCarousel.h"
 #import "TuWanListViewController.h"
 
-@interface TuWanViewController ()<iCarouselDelegate,iCarouselDataSource>
+@interface TuWanViewController ()
 
 
 
 @end
 
 @implementation TuWanViewController
-
-
-
 
 
 + (UINavigationController *)standradTuWanNavi
@@ -69,18 +66,13 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor greenSeaColor];
     self.title = @"兔玩";
     [Factory addMenuItemToVc:self];
     
    
-    
-    
-    
 }
-#pragma mark - iCarouselDataSource
-
-
 
 
 - (void)didReceiveMemoryWarning {

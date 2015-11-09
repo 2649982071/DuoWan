@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "WMPageController.h"
+
+
+
 @interface TuWanViewController : WMPageController
 
 
 // 内容页的首页应该是单例的，每次进程都初始化一次
 + (UINavigationController *)standradTuWanNavi;
+
 
 @end
