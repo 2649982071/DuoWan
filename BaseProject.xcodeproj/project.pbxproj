@@ -105,6 +105,7 @@
 		97DDAC421BEB09C800AE3193 /* TuWanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DDAC411BEB09C800AE3193 /* TuWanViewController.m */; };
 		97E6E3501BF0298500357D6C /* TuWanPicViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E34F1BF0298500357D6C /* TuWanPicViewModel.m */; };
 		97E6E3531BF02E9900357D6C /* TuWanPicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E3521BF02E9900357D6C /* TuWanPicController.m */; };
+		97E6E3561BF0495E00357D6C /* XiMaCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E3551BF0495E00357D6C /* XiMaCategoryCell.m */; };
 		97FD14671BEB27840054F669 /* DuoWanTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FD14661BEB27840054F669 /* DuoWanTabBarController.m */; };
 		97FD146A1BEB27950054F669 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FD14691BEB27950054F669 /* MyInfoViewController.m */; };
 		97FD146D1BEB27A40054F669 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FD146C1BEB27A40054F669 /* LeftViewController.m */; };
@@ -291,6 +292,8 @@
 		97E6E34F1BF0298500357D6C /* TuWanPicViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanPicViewModel.m; sourceTree = "<group>"; };
 		97E6E3511BF02E9900357D6C /* TuWanPicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuWanPicController.h; sourceTree = "<group>"; };
 		97E6E3521BF02E9900357D6C /* TuWanPicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TuWanPicController.m; sourceTree = "<group>"; };
+		97E6E3541BF0495E00357D6C /* XiMaCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiMaCategoryCell.h; sourceTree = "<group>"; };
+		97E6E3551BF0495E00357D6C /* XiMaCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiMaCategoryCell.m; sourceTree = "<group>"; };
 		97FD14651BEB27840054F669 /* DuoWanTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuoWanTabBarController.h; sourceTree = "<group>"; };
 		97FD14661BEB27840054F669 /* DuoWanTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuoWanTabBarController.m; sourceTree = "<group>"; };
 		97FD14681BEB27950054F669 /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
@@ -588,6 +591,8 @@
 				97012F151BEC414700692C57 /* TuWanImageCell.m */,
 				970D36AC1BEC7CCD000A14BE /* TRImageView.h */,
 				970D36AD1BEC7CCD000A14BE /* TRImageView.m */,
+				97E6E3541BF0495E00357D6C /* XiMaCategoryCell.h */,
+				97E6E3551BF0495E00357D6C /* XiMaCategoryCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1010,6 +1015,7 @@
 				97A23E6C1BEB442A00C7CB04 /* Factory.m in Sources */,
 				97DDAC361BEB099A00AE3193 /* BaseViewModel.m in Sources */,
 				970D36AE1BEC7CCD000A14BE /* TRImageView.m in Sources */,
+				97E6E3561BF0495E00357D6C /* XiMaCategoryCell.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				97FD14791BEB28020054F669 /* DuoWanNetManager.m in Sources */,
 				9728F8BF1BEC95C800AC2DDE /* TuWanHtmlController.m in Sources */,

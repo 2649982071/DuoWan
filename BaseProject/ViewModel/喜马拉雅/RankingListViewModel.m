@@ -28,20 +28,28 @@
 - (NSURL *)imgForRow:(NSInteger)row{
     return [NSURL URLWithString:[self rankingListForRow:row].albumCoverUrl290];
 }
-- (NSInteger)tracksForRow:(NSInteger)row{
-    return [self rankingListForRow:row].tracks ;
+- (NSString *)tracksForRow:(NSInteger)row{
+    return [NSString stringWithFormat:@"%ld集",[self rankingListForRow:row].tracks ];
 }
 
+/**  当前数据对应的数据ID */
+- (NSInteger)albumIDForRow:(NSInteger)row
+{
+    return [self rankingListForRow:row].albumId;
+}
 
 - (void)refreshDataCompletionHandle:(CompletionHandle)completionHandle
 {
-    _pageld = 1;
-    [self getMoreDataCompletionHandle:completionHandle];
+    _pageId = 1;
+    [self getDataFromNetCompleteHandle:completionHandle];
 }
 - (void)getMoreDataCompletionHandle:(CompletionHandle)completionHandle
 {
-    _pageld ++;
-    if (_pageld > _maxPageld) {
+    _pageId ++;
+    if (_pageId > _maxPageId) {
+        NSError *error = [NSError errorWithDomain:@"" code:999 userInfo:@{NSLocalizedDescriptionKey:@"已经到底了"}];
+        
+        completionHandle(error);
         return;
     }
     [self getDataFromNetCompleteHandle:completionHandle];
@@ -49,13 +57,17 @@
 
 - (void)getDataFromNetCompleteHandle:(CompletionHandle)completionHandle
 {
-    [XiMaNetManager getRankListWithPageId:_pageld completionHandle:^(id model, NSError *error) {
-        if (_pageld == 1) {
-            [self.dataArr removeAllObjects];
+    [XiMaNetManager getRankListWithPageId:_pageId completionHandle:^(id model, NSError *error) {
+        if (!error) {
+            if (_pageId == 1) {
+                [self.dataArr removeAllObjects];
+            }
+            RankingListModel *obj = (RankingListModel *)model;
+            _maxPageId = obj.maxPageId;
+            [self.dataArr addObjectsFromArray:obj.list];
         }
-        RankingListModel *obj = (RankingListModel *)model;
-        _maxPageld = obj.maxPageId;
-        [self.dataArr addObjectsFromArray:obj.list];
+        
+        completionHandle(error);
     }];
     
 }

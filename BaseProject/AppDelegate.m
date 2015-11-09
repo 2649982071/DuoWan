@@ -11,6 +11,7 @@
 #import "DuoWanTabBarController.h"
 #import "LeftViewController.h"
 #import "TuWanViewController.h"
+#import "RankListViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -46,8 +47,8 @@
     
         self.sideMedu.backgroundImage = [UIImage imageNamed:@"10941686_0800"];
 //    可以让出现菜单时，不显示状态栏
-    self.window.rootViewController = self.sideMenu;
-    
+  //  self.window.rootViewController = self.sideMenu;
+    self.window.rootViewController = [RankListViewController defaultnavi];
   
     // 配置全局UI样式
     [self configGlobalUIStyle];
